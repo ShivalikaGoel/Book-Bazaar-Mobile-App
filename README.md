@@ -9,5 +9,7 @@ Server: Apache </br>
 Language: PHP and SQL </br>
 OS: Linux </br>
 
-##UI
+## UI Pictures
+![Alt text](https://github.com/ShivalikaGoel/Book-Bazaar-Mobile-App/blob/master/Read-Me-Files/img1.jpeg?raw=true "Title")
+![Alt text](https://github.com/ShivalikaGoel/Book-Bazaar-Mobile-App/blob/master/Read-Me-Files/img4.JPG?raw=true "Title")
 
