@@ -1,0 +1,27 @@
+
+<?php
+
+$dbhost = 'localhost';
+         $dbuser = 'lockmanager';
+         $dbpass = 'riya2203';
+         $dbname='mylock';
+         $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
+         if(! $conn ) {
+            die('Could not connect: ' . mysql_error());
+         }
+$str=$_POST['password'];
+$sql = "SELECT keyname FROM lockkey where keyname='$str' ";
+$result = $conn->query($sql);
+$flag=0;
+if($result->num_rows > 0)
+{
+
+      $row = $result->fetch_assoc();
+	echo($result["keystatus"]);
+}
+else{
+echo("ERROR");
+}
+
+?>
+

@@ -1,0 +1,51 @@
+<?php
+$enrollnum=filter_input(INPUT_POST,"enrollnum");
+$name=filter_input(INPUT_POST,"name");
+$email=filter_input(INPUT_POST,"email");
+$phnum=filter_input(INPUT_POST,"phnum");
+$password=filter_input(INPUT_POST,"password");
+if(!empty($enrollnum)){
+  if(!empty($name)){
+    if(!empty($email)){
+      if(!empty($password)){
+        $dbServername="159.65.158.141:22";
+        $dbUsername="shivalika";
+        $dbPassword="riya2203" ;
+        $dbName="demodb";
+        $conn= mysqli_connect( mysqli_connect($dbServername,$dbUsername,$dbPassword,$dbName)or die("could not connect to db");
+        if(mysqli_connect_error()){
+          die('Connection Error('.mysqli_connect_error().')'
+          .mysqli_connect_error());
+        }
+        else{
+          $sql= "INSERT INTO signupdetails(enrollnum,name,email,phnum,password) values($enrollnum , $name, $email,$phnum, $password)";
+            if($conn->query($sql)){
+              echo"new rec added";
+            }
+            else{
+              echo"Error".$sql."<br>".$conn->error;
+            }
+            $conn->close();
+        }
+      }
+      else{
+        echo"password cannot be empty";
+        die();
+      }
+    }
+    else{
+      echo"email cannot be empty";
+      die();
+    }
+  }
+  else{
+    echo"name cannot be empty";
+    die();
+  }
+}
+else{
+  echo"email cannot be empty";
+  die();
+}
+?>
+

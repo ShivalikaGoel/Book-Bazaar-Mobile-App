@@ -1,0 +1,46 @@
+<html>
+
+<body>
+<?php
+$dbhost = 'localhost';
+         $dbuser = 'shivalika';
+         $dbpass = 'riya2203';
+         $conn = mysqli_connect($dbhost, $dbuser, $dbpass); 
+         if(! $conn ) {
+            die('Could not connect: ' . mysql_error());
+         }
+         echo 'Connected successfully';
+ 
+mysqli_select_db("demodb", $conn);
+
+ 
+echo"hio";
+$sql="INSERT INTO signupdetails (enrollnum,name,email,phnum,password)
+
+VALUES
+
+('{$_POST[enrollnum]}','{$_POST[name]}','{$_POST[email]}','{$_POST[phnum]}','{$_POST[password]}')";
+
+echo"yo";
+
+if (!mysql_query($sql,$conn))
+
+  {
+
+  die('Error: ' . mysql_error());
+
+  }
+
+echo "1 record added";
+
+ 
+
+mysql_close($con)
+
+?>
+
+</body>
+
+</html>
+
+

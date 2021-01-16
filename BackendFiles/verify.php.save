@@ -1,0 +1,24 @@
+<?php
+$x=0;
+
+while(isset($_GET['vkey'])==false && x<=60)
+{
+
+	sleep(5);
+	$x=$x+5;
+}
+if(isset($_GET['vkey']))
+echo "hey,got the key";
+echo $_GET['vkey'];
+echo $_POST['vkey'];
+if(x>300)
+echo "couldn't verify";
+else
+{
+$vkey=$_GET['vkey'];
+if($vkey==$vkeycheck)
+echo "verified";
+else
+echo "not verified";
+}
+?>
