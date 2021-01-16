@@ -1,0 +1,42 @@
+<?php
+$dbhost = 'localhost';
+         $dbuser = 'shivalika';
+         $dbpass = 'riya2203';
+         $dbname='demodb';
+         $conn = mysqli_connect('localhost', 'shivalika', 'riya2203','demodb');
+         if(! $conn ) {
+            die('Could not connect: ' . mysql_error());
+         }
+else{
+echo "connected";
+}
+$author=$_POST['author'];
+$subject=$_POST['subject'];
+$semester=$_POST['semester'];
+echo $author;
+echo $subject;
+echo $semester;
+$res= "select *  from autofilldetails where semester='$semester' and subject='$subject' and bookauth = '$author' ";
+$q= $conn->query($res);
+if($q->num_rows >0)
+{
+$result=mysqli_query($conn,$res);
+while($row=mysqli_fetch_array($result)){
+echo "hi";
+echo $row['bookpub'];
+echo $row['bookisbn'];
+echo"hi";
+$res2="select * from imageupload where enrollnum= '$row[enrollnum]' and isbn = '$row[bookisbn]'";
+$p=$conn->query($res2);
+if($p->num_rows >0)
+{
+$result2=mysqli_query($conn,$res);
+while($row2
+}
+}
+}
+else
+  echo $q->num_rows;
+mysqli_close($conn);
+?>
+
